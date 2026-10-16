@@ -1,2 +1,7 @@
 title: Little Meadow
-description: A cozy farm that grows at your own pace.
+description: A cozy farm that grows at your own pace. Grow crops through the seasons, raise happy animals and build the farm of your dreams.
+baseurl: "/little-meadow-web"
+url: "https://jesign.github.io"
+play_url: "https://play.google.com/store/apps/details?id=com.jesign.littlemeadow"
+# Flip to true once the game is live on Google Play.
+play_live: false

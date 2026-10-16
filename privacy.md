@@ -1,5 +1,6 @@
 ---
-title: Little Meadow Privacy Policy
+title: Privacy Policy
+layout: doc
 permalink: /privacy/
 ---
 

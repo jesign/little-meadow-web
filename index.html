@@ -1,0 +1,121 @@
+---
+layout: default
+title: Little Meadow
+---
+{% assign img = '/assets/img/' | relative_url %}
+<header class="hero">
+  <div class="wrap top">
+    <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ img }}icon.png" alt=""><span>Little Meadow</span></a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+    </nav>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">A cozy farming game for Android</span>
+      <h1>A little farm that grows at your own pace</h1>
+      <p class="lead">Plant crops through the seasons, care for happy animals and turn a patch of grass into the farm of your dreams. Nothing ever dies here – not even if you're away for days.</p>
+      {% if site.play_live %}
+      <a class="btn" href="{{ site.play_url }}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5Z"/></svg>
+        <span><small>Get it on</small>Google Play</span>
+      </a>
+      {% else %}
+      <span class="btn" aria-disabled="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5Z"/></svg>
+        <span><small>Coming soon to</small>Google Play</span>
+      </span>
+      {% endif %}
+      <p class="note">Plays fully offline · Made by Jesign</p>
+    </div>
+    <div class="frame">
+      <img src="{{ img }}01_late_farm_overview.webp" width="1280" height="720" alt="A grown Little Meadow farm in summer: fields of wheat and corn, an orchard, a stone pasture with cows and sheep, workshops and a garden with a fountain.">
+    </div>
+  </div>
+</header>
+
+<div class="meadow" aria-hidden="true">
+  <img class="hen" src="{{ img }}chicken_adult_side_idle.png" alt="">
+  <img class="chick" src="{{ img }}chick_baby_side_idle.png" alt="">
+  <img class="sheep" src="{{ img }}sheep_adult_side_idle.png" alt="">
+  <img class="cow" src="{{ img }}cow_adult_side_idle.png" alt="">
+</div>
+
+<main>
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Everything a farm needs</h2>
+        <p>Start with a small field and two hens. Grow it, season by season, into a busy country farm.</p>
+      </div>
+      <div class="features">
+        <article class="card">
+          <div class="ic"><img src="{{ img }}i_carrot.png" alt=""></div>
+          <h3>Grow through the seasons</h3>
+          <p>Carrots, wheat, tomatoes, strawberries, pumpkins and more. Every crop has its favorite season, and each day brings its own weather.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><img src="{{ img }}i_egg.png" alt=""></div>
+          <h3>Raise happy animals</h3>
+          <p>Chickens, ducks, rabbits, sheep, cows, goats and pigs – with a loyal dog and cat. Feed them, pet them and breed your best.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><img src="{{ img }}i_pumpkin.png" alt=""></div>
+          <h3>Care for quality</h3>
+          <p>Fertile soil, steady watering and busy bees make Good and Excellent harvests that sell for more and win at the County Fair.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><img src="{{ img }}i_bread.png" alt=""></div>
+          <h3>Make and sell goods</h3>
+          <p>Bake bread and cake, churn butter, press jam, spin yarn and jar honey. Fill orders and watch prices change with the seasons.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><img src="{{ img }}i_apple.png" alt=""></div>
+          <h3>Build and decorate</h3>
+          <p>Clear new land, raise barns and workshops, plant orchards and lay paths. A beautiful farm brings tourists who leave tips.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><img src="{{ img }}i_honey.png" alt=""></div>
+          <h3>A year full of events</h3>
+          <p>A planting festival, the County Fair, a harvest festival and a winter market – plus helpers to hire and a daily gift.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="screenshots" class="gallery-band">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Take a look around</h2>
+        <p>From your very first carrots to a farm the whole county visits.</p>
+      </div>
+      <div class="gallery" tabindex="0" aria-label="Screenshots">
+        <figure><div class="frame"><img src="{{ img }}02_early_farm.webp" width="1280" height="720" loading="lazy" alt="Early game: a small carrot field and a fenced hen pen with a coop."></div><figcaption>Day one: a field, a coop and two hens</figcaption></figure>
+        <figure><div class="frame"><img src="{{ img }}05_animals.webp" width="1280" height="720" loading="lazy" alt="A stone pasture with a red barn, cows, sheep, a goat, a pig and a dog."></div><figcaption>A pasture full of happy animals</figcaption></figure>
+        <figure><div class="frame"><img src="{{ img }}03_fields.webp" width="1280" height="720" loading="lazy" alt="Fields of ripe wheat, tall corn and tomatoes with sprinklers."></div><figcaption>Summer fields, ready to harvest</figcaption></figure>
+        <figure><div class="frame"><img src="{{ img }}06_garden.webp" width="1280" height="720" loading="lazy" alt="A garden with a fountain, gazebo, koi pond, benches and flower beds."></div><figcaption>A garden that brings in tourists</figcaption></figure>
+        <figure><div class="frame"><img src="{{ img }}07_orchard_workshops.webp" width="1280" height="720" loading="lazy" alt="An apple orchard, beehives, a greenhouse and a row of workshops."></div><figcaption>Orchards, beehives and workshops</figcaption></figure>
+        <figure><div class="frame"><img src="{{ img }}08_animal_genes.webp" width="1280" height="720" loading="lazy" alt="A cow's info card showing a five-star rating, a rare spotted coat and gene bars."></div><figcaption>Breed for stars and rare coats</figcaption></figure>
+      </div>
+      <p class="gallery-hint">Swipe or scroll for more →</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="promise">
+        <div>
+          <h2>Relaxed, on your terms</h2>
+          <p>Little Meadow is made to unwind with. Play for a few minutes or an afternoon – your farm keeps growing gently in between, and nothing is ever lost.</p>
+        </div>
+        <ul>
+          <li><img src="{{ img }}i_milk.png" alt=""><span><b>No stress timers</b>A game day passes in about 20 minutes.</span></li>
+          <li><img src="{{ img }}i_carrot.png" alt=""><span><b>Nothing dies</b>Crops wait for you and animals stay safe while you're away.</span></li>
+          <li><img src="{{ img }}i_diamond.png" alt=""><span><b>Plays offline</b>No account, no internet needed – your farm lives on your phone.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>

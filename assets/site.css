@@ -1,0 +1,187 @@
+/* Little Meadow site: the game's "cream latte + honey oak" UI palette. */
+@font-face { font-family: "Fredoka"; src: url("fonts/fredoka.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("fonts/nunito.woff2") format("woff2"); font-weight: 200 1000; font-display: swap; }
+
+:root {
+  --paper: #FAF0DC;
+  --card: #FFF8EA;
+  --card-2: #F0E0C0;
+  --oak: #D9B583;
+  --oak-dark: #B08A5E;
+  --text: #4A3828;
+  --text-soft: #8A6844;
+  --sage: #A9C47F;
+  --sage-hover: #B5CD8D;
+  --gold: #E0B850;
+  --grass: #A7B13C;
+  --grass-dark: #7E8C2E;
+  --sand: #E9C579;
+  --sky-top: #F6CE7C;
+  --shadow: 0 6px 18px rgba(115, 84, 51, 0.16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font: 400 17px/1.6 "Nunito", system-ui, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+body > main { flex: 1; }
+img { max-width: 100%; display: block; }
+a { color: #6E8A3E; font-weight: 700; }
+a:hover { color: #56702E; }
+h1, h2, h3 { font-family: "Fredoka", "Nunito", sans-serif; font-weight: 600; line-height: 1.15; margin: 0; }
+
+.wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+/* ---------------------------------------------------------- top bar */
+.top {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 0;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+.brand img { width: 48px; height: 48px; border-radius: 12px; box-shadow: var(--shadow); }
+.brand span { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 24px; }
+.top nav { display: flex; gap: 22px; }
+.top nav a { color: var(--text); text-decoration: none; font-weight: 700; }
+.top nav a:hover { color: #6E8A3E; }
+
+/* ---------------------------------------------------------- hero */
+.hero {
+  background: linear-gradient(180deg, var(--sky-top) 0%, #F8E2AC 45%, var(--paper) 100%);
+  padding-bottom: 40px;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1.25fr; gap: 48px; align-items: center;
+  padding: 28px 0 8px;
+}
+.eyebrow {
+  display: inline-block; padding: 6px 14px; border-radius: 999px;
+  background: rgba(255, 248, 234, 0.75); border: 2px solid var(--oak);
+  color: var(--text-soft); font-weight: 700; font-size: 14px; letter-spacing: 0.02em;
+}
+.hero h1 { font-size: clamp(42px, 6vw, 68px); margin: 18px 0 14px; color: #4A3828; }
+.hero p.lead { font-size: 20px; margin: 0 0 28px; max-width: 30em; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 24px; border-radius: 16px; text-decoration: none;
+  font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 19px; color: #3F4A26;
+  background: var(--sage); border: 3px solid var(--gold); border-bottom-width: 6px;
+  box-shadow: var(--shadow); transition: transform 0.12s ease, background 0.12s ease;
+}
+.btn:hover { background: var(--sage-hover); color: #3F4A26; transform: translateY(-2px); }
+.btn small { display: block; font: 700 12px/1 "Nunito", sans-serif; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; }
+.btn svg { width: 26px; height: 26px; flex: none; }
+.hero .note { margin-top: 14px; font-size: 14px; color: var(--text-soft); }
+
+.frame {
+  border-radius: 24px; padding: 10px;
+  background: var(--oak); border: 3px solid var(--oak-dark);
+  box-shadow: 0 14px 34px rgba(115, 84, 51, 0.24);
+}
+.frame img { border-radius: 16px; width: 100%; height: auto; }
+.hero .frame { transform: rotate(1.2deg); }
+
+/* ---------------------------------------------------------- grass strip */
+.meadow {
+  position: relative; height: 92px; margin-top: -8px;
+  background:
+    radial-gradient(circle at 12px 0, var(--grass) 12px, transparent 13px) 0 0 / 24px 14px repeat-x,
+    linear-gradient(var(--grass), var(--grass-dark));
+  background-position: 0 0, 0 12px;
+  background-size: 24px 14px, 100% calc(100% - 12px);
+  background-repeat: repeat-x, no-repeat;
+}
+.meadow img { position: absolute; bottom: 14px; image-rendering: auto; filter: drop-shadow(0 4px 2px rgba(56, 48, 42, 0.25)); }
+.meadow .hen { left: 12%; height: 60px; }
+.meadow .chick { left: calc(12% + 70px); height: 32px; }
+.meadow .sheep { right: 30%; height: 66px; transform: scaleX(-1); }
+.meadow .cow { right: 9%; height: 74px; transform: scaleX(-1); }
+
+/* ---------------------------------------------------------- sections */
+section { padding: 72px 0; }
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+.section-head h2 { font-size: clamp(30px, 4vw, 42px); margin-bottom: 10px; }
+.section-head p { margin: 0; color: var(--text-soft); font-size: 18px; }
+
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card {
+  background: var(--card); border: 3px solid var(--oak); border-radius: 22px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow);
+}
+.card .ic {
+  width: 72px; height: 72px; border-radius: 18px; margin-bottom: 14px;
+  background: var(--card-2); display: grid; place-items: center;
+}
+.card .ic img { width: 56px; height: 56px; }
+.card h3 { font-size: 22px; margin-bottom: 6px; }
+.card p { margin: 0; }
+
+/* ---------------------------------------------------------- gallery */
+.gallery-band { background: linear-gradient(180deg, var(--paper), #F3E3C2 18%, #F3E3C2 82%, var(--paper)); }
+.gallery {
+  display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 6px 4px 22px; scrollbar-color: var(--oak-dark) transparent;
+}
+.gallery figure { margin: 0; flex: 0 0 min(760px, 86%); scroll-snap-align: center; }
+.gallery figcaption { text-align: center; margin-top: 12px; font-weight: 700; color: var(--text-soft); }
+.gallery-hint { text-align: center; color: var(--text-soft); font-size: 14px; margin-top: 4px; }
+
+/* ---------------------------------------------------------- cozy promise */
+.promise {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center;
+  background: var(--card); border: 3px solid var(--oak); border-radius: 28px; padding: 40px;
+  box-shadow: var(--shadow);
+}
+.promise h2 { font-size: clamp(28px, 3.6vw, 38px); margin-bottom: 12px; }
+.promise ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.promise li {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--paper); border: 2px solid var(--card-2); border-radius: 16px; padding: 14px 16px;
+}
+.promise li b { display: block; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 18px; }
+.promise li img { width: 40px; height: 40px; flex: none; }
+
+/* ---------------------------------------------------------- footer */
+footer { background: #E9D6B1; border-top: 3px solid var(--oak); padding: 34px 0; margin-top: 40px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
+footer p { margin: 0; color: var(--text-soft); }
+footer nav { display: flex; gap: 20px; }
+
+/* ---------------------------------------------------------- document pages (privacy) */
+.doc { padding: 24px 0 40px; }
+.doc article {
+  background: var(--card); border: 3px solid var(--oak); border-radius: 24px;
+  padding: clamp(24px, 5vw, 56px); box-shadow: var(--shadow); max-width: 820px; margin: 0 auto;
+}
+.doc h1 { font-size: clamp(32px, 5vw, 44px); margin-bottom: 8px; }
+.doc h2 { font-size: 24px; margin: 32px 0 8px; }
+.doc ul { padding-left: 22px; }
+
+/* ---------------------------------------------------------- small screens */
+@media (max-width: 860px) {
+  .hero-grid, .promise { grid-template-columns: 1fr; }
+  .hero-grid { gap: 32px; text-align: center; }
+  .hero p.lead { margin-inline: auto; }
+  .hero .frame { transform: none; }
+  .features { grid-template-columns: 1fr 1fr; }
+  .promise { padding: 26px; }
+  .top nav { display: none; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .features { grid-template-columns: 1fr; }
+  section { padding: 52px 0; }
+  .meadow .sheep { display: none; }
+  .gallery figure { flex-basis: 92%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
